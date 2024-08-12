@@ -1,5 +1,11 @@
-export default async function HomeLoading(){
-    return(
-        <p>Carregando...</p>
-    )
+import { Skeleton } from '@/app/components/skeleton'
+
+export default async function HomeLoading() {
+  return (
+    <div className="grid h-full grid-cols-9 grid-rows-6 gap-6">
+      <Skeleton className="col-span-6 row-span-6 h-[760px]" />
+      <Skeleton className="col-span-3 row-span-3" />
+      <Skeleton className="col-span-3 row-span-3" />
+    </div>
+  )
 }
