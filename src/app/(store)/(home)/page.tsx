@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: 'Home',
 }
 
+
 export default async function Home() {
   const [highlightedProduct, ...otherProduct] = await getFeatureProducts()
 
