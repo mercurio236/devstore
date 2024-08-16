@@ -34,7 +34,7 @@ export async function generateStaticParams() {
   const response = await api('/products/featured')
   const products: Product[] = await response.json()
 
-  products.map((product) => {
+  return products.map((product) => {
     return {
       slug: product.slug,
     }
