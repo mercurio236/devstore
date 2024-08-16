@@ -1,3 +1,4 @@
+import { AddToCardButton } from '@/app/components/add-to-cart-button'
 import { api } from '@/app/data/api'
 import { Product } from '@/app/data/types/products'
 import { Metadata } from 'next'
@@ -71,7 +72,7 @@ export default async function ProductPage({ params }: ProductProps) {
             })}
           </span>
           <span className="text-sm text-zinc-400">
-            {(product.price / 12).toLocaleString('pt-BR', {
+           Em até 12x s/ juros {(product.price / 12).toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
             })}
@@ -107,12 +108,7 @@ export default async function ProductPage({ params }: ProductProps) {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="mt-8 flex h-12 items-center justify-center rounded-full bg-emerald-600 font-semibold text-white"
-        >
-          Adicionar ao carrinho
-        </button>
+        <AddToCardButton productId={product.id}/>
       </div>
     </div>
   )
